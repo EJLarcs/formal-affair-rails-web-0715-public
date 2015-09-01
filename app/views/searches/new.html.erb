@@ -1,1 +1,8 @@
 <!-- Your form goes here! -->
+
+<form accept-charset="UTF-8" action="/searches" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <label for="q">Search</label>
+  <input id="q" name="q" type="text">
+  <input type="submit" value="Search">
+</form>

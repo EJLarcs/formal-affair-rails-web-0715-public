@@ -1,1 +1,41 @@
 <!-- Your form goes here! -->
+<%= form_for(@baby) do |f| %>
+<% if @baby.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@baby.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+    <% @baby.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field">
+  <%= f.label :first_name %><br>
+  <%= f.text_field :first_name %><br>
+</div>
+
+<div class="field">
+  <%= f.label :last_name %><br>
+  <%= f.text_field :last_name %><br>
+</div>
+
+<div class="field">
+  <%= f.label :weight %><br>
+  <%= f.text_field :weight %><br>
+</div>
+
+<ul>
+<div class="field">
+  <%= f.label :birth_date %><br>
+  <%= f.text_field :birth_date %><br>
+</div>
+</ul>
+
+<br>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<%end%>

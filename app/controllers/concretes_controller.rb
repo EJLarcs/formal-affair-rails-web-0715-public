@@ -1,4 +1,9 @@
 class ConcretesController < ApplicationController
+
+  def index
+    @concretes = Concrete.all
+  end
+
   def new
     @concrete = Concrete.new
   end
@@ -14,4 +19,9 @@ class ConcretesController < ApplicationController
   def update
     render nothing: true
   end
+  # 
+  # private
+  # def post_params
+  #   params.require(:concrete)permit(:)
+  # end
 end
